@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -20,6 +20,13 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 });
 
+const poppins = Poppins({
+  weight: ['400', '500', '600'],
+  subsets: ['latin'],
+  variable: '--font-poppins',
+
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -34,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${montserrat.variable}  ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${montserrat.variable} ${poppins.variable}  ${geistMono.variable} antialiased`}
       >
         <Header />
         {children}

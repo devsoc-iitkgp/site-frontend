@@ -10,6 +10,7 @@ export default {
     extend: {
       fontFamily: {
         mont: ["var(--font-montserrat)", "sans-serif"],
+        poppins: ["var(--font-poppins)", "sans"],
       },
       colors: {
         background: "var(--background)",
