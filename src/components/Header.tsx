@@ -17,8 +17,11 @@ function Header() {
     ];
 
     return (
-        <header className="bg-black text-white p-4">
-            <nav className="flex justify-end space-x-12 font-mont text-[24px] relative">
+        <header className="bg-black text-white p-4 flex justify-between">
+            <div >
+                <Image src="/logo-devsoc.png" alt='devsoc-logo' height={45} width={45} />
+            </div>
+            <nav className="flex justify-end items-center space-x-16 font-mont text-[16px] relative">
                 {links.map((link, index) => (
                     <Link key={index} href={link.path} className="relative">
                         <div
