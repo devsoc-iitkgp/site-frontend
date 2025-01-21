@@ -12,6 +12,23 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+       backgroundImage: {
+         'glass-feature-card': "url('/Glass_feauture_card_bg.svg')",
+         'number-bullet-bg': "url('/number_bullet-bg.svg')",
+         'bullet-path': "url('/bullet-path.svg')",
+         'apnaInsti-path-logo': "url('/apnaInsti-path-logo.svg')",
+      },
+        fontFamily: {
+          poppins: ['Poppins', 'sans-serif'], // Add Poppins font
+          montserrat: ['Montserrat', 'sans-serif'],
+      },
+        rotate: {
+          '20': '20deg',
+          '25': '25deg',
+          '22.5': '22.5deg',
+          '15': '15deg',
+          '345': '345deg',
+      }
     },
   },
   plugins: [],

@@ -271,6 +271,11 @@
   dependencies:
     fast-glob "3.3.1"
 
+"@next/font@^13.0.0":
+  version "13.5.8"
+  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.5.8.tgz#59fd82e8148623653fb0503bd1d2afccc2434e6d"
+  integrity sha512-ITORq3Sw95OWNxUxgLICXKmeKFh7K5d+w1v+vO4cOZz6i2taUer/77zVxTZExmk72bD9P5lahkgunjS8ej24DA==
+
 "@next/swc-darwin-arm64@15.1.2":
   version "15.1.2"
   resolved "https://registry.yarnpkg.com/@next/swc-darwin-arm64/-/swc-darwin-arm64-15.1.2.tgz#822265999fc76f828f4c671a5ef861b8e2c5213e"
