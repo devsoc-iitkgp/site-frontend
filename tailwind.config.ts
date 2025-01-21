@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        mont: ["var(--font-montserrat)", "sans-serif"],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
         poppins: ["var(--font-poppins)", "sans"],
       },
       colors: {
