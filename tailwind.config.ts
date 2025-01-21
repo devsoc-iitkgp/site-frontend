@@ -16,6 +16,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      blur: {
+        229: '229px',
+      },
     },
   },
   plugins: [],

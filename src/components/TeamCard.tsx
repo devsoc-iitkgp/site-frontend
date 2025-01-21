@@ -46,7 +46,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
               rel="noopener noreferrer"
               className="text-white text-xl hover:text-blue-400"
             >
-            <Image src="/github.png" alt='devsoc-logo' height={30} width={30} />
+            <Image src="/linkedin.png" alt='devsoc-logo' height={30} width={30} />
             </a>
             <a
               href={links.github}
@@ -54,7 +54,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
               rel="noopener noreferrer"
               className="text-white text-xl hover:text-gray-400"
             >
-            <Image src="/linkedin.png" alt='devsoc-logo' height={30} width={30} />
+            <Image src="/github.png" alt='devsoc-logo' height={30} width={30} />
             </a>
             <a
               href={`mailto:${links.email}`}
