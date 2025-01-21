@@ -1,51 +1,34 @@
 "use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+import Navbar from "./Navbar";
+import Hamburger from "./Hamburger";
 
 function Header() {
-    const pathname = usePathname();
+  return (
+    <header className="flex items-center justify-between bg-black p-4 text-white">
+      {/* Logo */}
+      <div>
+        <Image
+          src="/logo-devsoc.png"
+          alt="devsoc-logo"
+          height={45}
+          width={45}
+        />
+      </div>
 
-    const links = [
-        { name: 'Home', path: '/', icon: 'home' },
-        { name: 'About', path: '/about', icon: 'about' },
-        { name: 'Team', path: '/team', icon: 'team' },
-        { name: 'Projects', path: '/projects', icon: 'code' },
-        { name: 'Contact', path: '/contact', icon: 'call' },
-    ];
+      {/* Navbar for larger screens */}
+      <div className="hidden md:block">
+        <Navbar />
+      </div>
 
-    return (
-        <header className="bg-black text-white p-4 flex justify-between">
-            <div >
-                <Image src="/logo-devsoc.png" alt='devsoc-logo' height={45} width={45} />
-            </div>
-            <nav className="flex justify-end items-center space-x-16 font-mont text-[16px] relative">
-                {links.map((link, index) => (
-                    <Link key={index} href={link.path} className="relative">
-                        <div
-                            className={`flex items-center justify-center space-x-2 transition-all duration-300 ${pathname === link.path
-                                ? ''
-                                : 'opacity-45 hover:opacity-100'
-                                }`}
-                        >
-                            <Image src={`/${link.icon}.svg`} width={24} height={24} alt={link.icon} />
-                            <span>{link.name}</span>
-                        </div>
-                        {pathname === link.path && (
-                            <div
-                                className="absolute left-0 right-0 -bottom-1 h-[3px] rounded-[3px]"
-                                style={{
-                                    background: 'linear-gradient(90deg, #7FEEE7 0%, #498884 85.5%)',
-                                }}
-                            />
-                        )}
-                    </Link>
-                ))}
-            </nav>
-        </header>
-    );
+      {/* Hamburger for smaller screens */}
+      <div className="block md:hidden">
+        <Hamburger />
+      </div>
+    </header>
+  );
 }
 
 export default Header;

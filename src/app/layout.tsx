@@ -15,18 +15,16 @@ const geistMono = Geist_Mono({
 });
 
 const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-montserrat',
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-montserrat",
 });
 
 const poppins = Poppins({
-  weight: ['400', '500', '600'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
-
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
 });
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -41,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${montserrat.variable} ${poppins.variable}  ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${montserrat.variable} ${poppins.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
         {children}
