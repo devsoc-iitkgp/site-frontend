@@ -17,6 +17,7 @@ export default {
          'number-bullet-bg': "url('/number_bullet-bg.svg')",
          'bullet-path': "url('/bullet-path.svg')",
          'apnaInsti-path-logo': "url('/apnaInsti-path-logo.svg')",
+         'apnaInsti-ss-bg': "url('/apnaInsti_ss_bg.svg')",
       },
         fontFamily: {
           poppins: ['Poppins', 'sans-serif'], // Add Poppins font

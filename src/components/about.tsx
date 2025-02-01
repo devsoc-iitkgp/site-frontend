@@ -5,7 +5,7 @@ import Image from "next/image";
 const About = () => {
     return (
         <>
-            <div className="relative top-[1rem] flex justify-center items-center w-full h-screen w-[100vw] left-[0]">
+            <div className="relative top-[1rem] flex justify-center items-center w-full h-screen left-[0]">
                 <div
                     className="relative w-[70.69rem] h-[25rem] max-w-[90vw] opacity-90 box-border rounded-[3.6875rem] bg-[radial-gradient(circle_at_15.32%_21.04%,rgba(165,239,255,0.2)_0%,rgba(110,191,244,0.045)_77.08%,rgba(70,144,213,0)_100%)] bg-blend-overlay backdrop-blur-[40px] shadow-[inset_3px_5px_2px_-3.75px_rgba(144,134,134,1),inset_0_-3px_10px_-2px_rgba(198,160,214,0.75)] flex justify-center items-center p-4 rounded-[3.6875rem] text-white"
                 >
@@ -23,7 +23,7 @@ const About = () => {
 
 
 
-            <div className="relative bg-bullet-path object-cover w-screen text-center h-[700px] mx-0 mt-[500px] px-0 w-[100vw]">
+            <div className="relative bg-bullet-path object-cover w-screen bg-cover text-center h-[700px] mx-0 mt-[100px] px-0">
 
                 <div className="absolute left-[17%] top-[23%] flex bg-number-bullet-bg bg-cover bg-center aspect-[1/1] max-w-[150px] min-w-[70px] w-auto items-center justify-center">
                     <p className="text-5xl text-center font-montserrat font-bold text-black rotate-20">
@@ -104,6 +104,49 @@ const About = () => {
                     {/* <img src="apnaInsti-path-logo.svg" alt="" /> */}
                 </div>
             </div >
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-[80%] pt-[250px] mx-auto">
+                <Image
+                    src="bus_tracking_phone.svg"
+                    alt="bus-tracking feature"
+                    width={387}
+                    height={660}
+                ></Image>
+                <Image
+                    src="apnaInsti_phone.svg"
+                    alt="logo and phone"
+                    width={378}
+                    height={654}
+                ></Image>
+                <Image
+                    src="buy_and_sell_phone.svg"
+                    alt="buy and sell feature"
+                    width={393}
+                    height={654}
+                ></Image>
+            </div>
+
+
+
+            <div className="bg-apnaInsti-ss-bg bg-center bg-no-repeat bg-contain grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 w-[70%] pt-[100px] mx-auto">
+                <Image
+                    className="mt-[50px] transform scale-[1] ml-[100px]"
+                    src="apnaInsti_home_ss.svg"
+                    alt="bus-tracking feature"
+                    width={400}
+                    height={722}
+                ></Image>
+                <Image
+                    className="mt-[250px] transform scale-[1] ml-[50px]"
+                    src="apnaInsti_menu_ss.svg"
+                    alt="Picture of the author"
+                    width={545}
+                    height={695}
+                ></Image>
+
+            </div>
+
+
 
         </>
     );
