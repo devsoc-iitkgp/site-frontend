@@ -15,7 +15,7 @@ export default {
        backgroundImage: {
          'glass-feature-card': "url('/Glass_feauture_card_bg.svg')",
          'number-bullet-bg': "url('/number_bullet-bg.svg')",
-         'bullet-path': "url('/bullet-path.svg')",
+         'bullet-path': "url('/bullet-path.png')",
          'apnaInsti-path-logo': "url('/apnaInsti-path-logo.svg')",
          'apnaInsti-ss-bg': "url('/apnaInsti_ss_bg.svg')",
       },
