@@ -1,12 +1,32 @@
 "use client";
-import Image from 'next/image';
-import React, { useState } from 'react';
+import Image from "next/image";
+import React, { useState } from "react";
 
 const socialLinks = [
-  { href: 'https://www.instagram.com', src: '/assets/insta-contact.svg', alt: 'Instagram', label: 'Instagram' },
-  { href: 'https://www.linkedin.com', src: '/assets/Linkedin-contact.svg', alt: 'LinkedIn', label: 'LinkedIn' },
-  { href: 'https://www.facebook.com', src: '/assets/facebook-contact.svg', alt: 'Facebook', label: 'Facebook' },
-  { href: 'https://www.github.com', src: '/assets/github-contact.svg', alt: 'GitHub', label: 'GitHub' },
+  {
+    href: "https://www.instagram.com",
+    src: "/assets/insta-contact.svg",
+    alt: "Instagram",
+    label: "Instagram",
+  },
+  {
+    href: "https://www.linkedin.com",
+    src: "/assets/Linkedin-contact.svg",
+    alt: "LinkedIn",
+    label: "LinkedIn",
+  },
+  {
+    href: "https://www.facebook.com",
+    src: "/assets/facebook-contact.svg",
+    alt: "Facebook",
+    label: "Facebook",
+  },
+  {
+    href: "https://www.github.com",
+    src: "/assets/github-contact.svg",
+    alt: "GitHub",
+    label: "GitHub",
+  },
 ];
 
 export default function Contact() {
@@ -23,11 +43,23 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen w-screen px-6 py-16 bg-gray-900 text-white">
-      <h1 className="mb-12 text-center text-4xl font-bold">Get in Touch</h1>
+    <div className="flex min-h-screen w-screen flex-col items-center bg-black px-6 py-16 text-white">
+      {
+        //glows
+      }
+      <div className="absolute left-[12vw] top-[5vh] h-[600px] w-[600px] transform rounded-full bg-[#D739E5]/20 blur-[100px]"></div>
+      <div className="absolute left-[25vw] top-[40vh] h-[400px] w-[400px] transform rounded-full bg-[#3DDEED]/15 blur-[100px]"></div>
+      <div className="absolute left-[65vw] top-[1vh] h-[600px] w-[600px] transform rounded-full bg-[#3DDEED]/15 blur-[100px]"></div>
+      <div className="absolute left-[65vw] top-[40vh] h-[600px] w-[600px] transform rounded-full bg-[#D739E5]/20 blur-[100px]"></div>
 
-      <div className="flex gap-10 justify-around items-center rounded-xl w-[70vw] h-[70vh] bg-gray-800/50  backdrop-blur-xl">
 
+      <div className="relative mx-auto mb-12 w-fit rounded-xl bg-gradient-to-b from-gray-300 to-[#4444] p-[1px]">
+        <div className="rounded-xl bg-[#1a1a1a] px-6 py-3 text-center">
+          <h1 className="text-center text-4xl font-bold">GET IN TOUCH</h1>
+        </div>
+      </div>
+
+      <div className="flex h-[70vh] w-[70vw] items-center justify-around gap-10 rounded-[25px] bg-gray-700/30 backdrop-blur-xl border-2 border-gray-400/30">
         {/* Left Side - Map and Contact Info */}
         <div className="space-y-6 rounded-2xl p-5">
           <iframe
@@ -42,11 +74,21 @@ export default function Contact() {
           {/* Contact Details */}
           <div className="space-y-4 px-4">
             <div className="flex items-center space-x-3">
-              <Image src="/assets/phone-contact.svg" alt="phone" width={24} height={24} />
+              <Image
+                src="/assets/phone-contact.svg"
+                alt="phone"
+                width={24}
+                height={24}
+              />
               <span>+91 12345 67890</span>
             </div>
             <div className="flex items-center space-x-3">
-              <Image src="/assets/mail-contact.svg" alt="mail" width={24} height={24} />
+              <Image
+                src="/assets/mail-contact.svg"
+                alt="mail"
+                width={24}
+                height={24}
+              />
               <span>dev.soc@gmail.com</span>
             </div>
           </div>
@@ -60,15 +102,17 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex items-center space-x-2 p-3 rounded-lg bg-gray-700 hover:bg-gray-600 transition-all duration-300"
+                className="flex items-center space-x-2 rounded-lg bg-gray-700/20 p-3 transition-all duration-300 hover:bg-gray-600/30"
               >
                 <Image src={src} alt={alt} width={25} height={25} />
-                <span className="text-sm font-medium text-white font-semibold">{label}</span>
+                <span className="text-sm font-medium font-semibold text-white">
+                  {label}
+                </span>
               </a>
             ))}
           </div>
         </div>
-        <div className="h-[95%] w-[1px] border-r border-gray-600 "></div>
+        <div className="h-[95%] w-[1px] border-r border-gray-600"></div>
 
         {/* Right Side - Contact Form */}
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -103,27 +147,30 @@ export default function Contact() {
             }
           />
 
-          <textarea
-            placeholder="Write your message..."
-            rows={4}
-            className="w-full border-b border-gray-600 bg-transparent p-3 text-white focus:border-gray-400 focus:outline-none"
-            value={formData.message}
-            onChange={(e) =>
-              setFormData({ ...formData, message: e.target.value })
-            }
-          />
+          <div className="relative w-full border-b border-gray-600 bg-transparent">
+            <textarea
+              rows={4}
+              className="w-full bg-transparent p-3 text-white focus:border-gray-400 focus:outline-none"
+              value={formData.message}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
+            />
+            {!formData.message && (
+              <span className="absolute bottom-2 left-3 text-gray-400">
+                Write your message...
+              </span>
+            )}
+          </div>
 
           <button
             type="submit"
-            className="px-4 border-[1px] border-white rounded-md bg-black bg-opacity-20 py-3 text-white transition-all duration-300 hover:bg-black hover:bg-opacity-40"
+            className="rounded-md border-[1px] border-white bg-black bg-opacity-20 px-4 py-3 text-white transition-all duration-300 hover:bg-black hover:bg-opacity-40"
           >
             Send Message →
           </button>
-
         </form>
-
       </div>
-
     </div>
   );
 }
