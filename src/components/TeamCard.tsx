@@ -21,7 +21,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
       {/* Gradient Border */}
       <div className="absolute -inset-[2px] rounded-br-2xl rounded-tl-2xl bg-gradient-to-b from-white to-[#4444] opacity-40 transition-opacity"></div>
       {/* Card Content */}
-      <div className="relative max-w-xs overflow-hidden rounded-br-2xl rounded-tl-2xl bg-black p-4 text-white shadow-lg">
+      <div className="relative max-w-xs overflow-hidden rounded-br-2xl rounded-tl-2xl bg-[url('/TeamCardBg.png')] p-4 text-white shadow-lg">
         <img
           src={imageUrl}
           alt={name}

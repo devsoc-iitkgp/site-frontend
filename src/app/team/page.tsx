@@ -109,7 +109,7 @@ const TeamsPage = () => {
     <div className="bg-[url('/TeamsBg.png')] bg-cover bg-center">
       <div className="justify-content-center flex min-h-screen flex-col items-center bg-transparent p-8 font-montserrat">
         <Heading name="Heads" />
-        <div className="grid w-[75%] grid-cols-1 justify-items-center gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-4 grid w-[75%] grid-cols-1 justify-items-center gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {teamMembers.map((member, index) => (
             <TeamCard
               key={index}
@@ -125,7 +125,7 @@ const TeamsPage = () => {
 
       <div className="justify-content-center flex min-h-screen flex-col items-center bg-transparent p-8 font-montserrat">
         <Heading name="SubHeads" />
-        <div className="grid w-[75%] grid-cols-1 justify-items-center gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-4 grid w-[75%] grid-cols-1 justify-items-center gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {teamMembers.map((member, index) => (
             <TeamCard
               key={index}
