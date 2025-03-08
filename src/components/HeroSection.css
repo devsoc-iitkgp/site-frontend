@@ -1,0 +1,13 @@
+@keyframes rotateRing {
+    0% {
+      transform: rotateX(60deg) rotateY(-50deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(60deg) rotateY(-50deg) rotateZ(360deg);
+    }
+  }
+  
+  .rotate-ring {
+    animation: rotateRing 3s linear infinite;
+  }
+  
