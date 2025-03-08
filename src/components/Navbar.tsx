@@ -58,15 +58,6 @@ const Navbar: React.FC = () => {
         {renderActiveIndicator("/team")}
       </Link>
 
-      {/* Projects Link */}
-      <Link href="/projects" className="relative">
-        <div className={getLinkClasses("/projects")}>
-          <Image src="/code.svg" width={23} height={23} alt="code" />
-          <span>Projects</span>
-        </div>
-        {renderActiveIndicator("/projects")}
-      </Link>
-
       {/* Contact Link */}
       <Link href="/contact" className="relative">
         <div className={getLinkClasses("/contact")}>

@@ -10,7 +10,6 @@ function Hamburger() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Team", path: "/team" },
-    { name: "Projects", path: "/projects" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -21,7 +20,7 @@ function Hamburger() {
       {/* Hamburger Icon */}
       <button
         onClick={toggleMenu}
-        className="group z-50 flex h-8 w-8 flex-col justify-between focus:outline-none md:hidden"
+        className="group z-50 flex h-6 w-6 flex-col justify-between focus:outline-none md:hidden"
       >
         <span
           className={`h-1 w-full transform rounded bg-white transition duration-300 ${
@@ -46,7 +45,7 @@ function Hamburger() {
       >
         <button
           onClick={toggleMenu}
-          className="absolute right-6 top-6 text-4xl font-bold text-white focus:outline-none"
+          className="absolute right-6 top-6 text-2xl font-bold text-white focus:outline-none"
         >
           ✕
         </button>
