@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Form from "../components/Form";
+import ContactForm from "@/components/ContactForm";
 
 const socialLinks = [
   {
@@ -29,7 +29,7 @@ const socialLinks = [
   },
 ];
 
-function page() {
+function ContactPage() {
   return (
     <div className="relative flex min-h-screen w-screen flex-col items-center overflow-hidden bg-black px-4 py-10 text-white">
       {/* Glowing Background Effects */}
@@ -112,7 +112,7 @@ function page() {
         <div className="hidden w-[1px] self-stretch border-r border-gray-600 lg:block"></div>
 
         {/* Right Side - Contact Form */}
-        <Form />
+        <ContactForm />
         {/* Social Links for Smaller Devices */}
         <div className="mt-2 flex w-full flex-col items-center gap-4 lg:hidden">
           <div className="flex flex-col items-center gap-2 px-4">
@@ -157,4 +157,4 @@ function page() {
   );
 }
 
-export default page;
+export default ContactPage;
