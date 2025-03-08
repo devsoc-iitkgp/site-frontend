@@ -31,7 +31,7 @@ const socialLinks = [
 
 function ContactPage() {
   return (
-    <div className="relative flex min-h-screen w-screen flex-col items-center overflow-hidden bg-black px-4 py-10 text-white">
+    <div className="relative flex min-h-screen w-full flex-col items-center overflow-hidden bg-black px-4 py-10 text-white">
       {/* Glowing Background Effects */}
       <div className="absolute left-[12vw] top-[5vh] h-[600px] w-[600px] rounded-full bg-[#D739E5]/20 blur-[100px]"></div>
       <div className="absolute left-[25vw] top-[40vh] h-[400px] w-[400px] rounded-full bg-[#3DDEED]/15 blur-[100px]"></div>
