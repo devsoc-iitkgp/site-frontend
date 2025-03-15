@@ -1,8 +1,9 @@
+import About from "@/components/About";
+
 export default function Home() {
   return (
-    <div className="flex h-[800px] flex-col items-center justify-center">
-      <h1>Home</h1>
-      <p>Welcome to the Home page!</p>
+    <div className="grid min-h-screen items-center justify-items-center font-[family-name:var(--font-geist-sans)]">
+      <About />
     </div>
   );
 }
