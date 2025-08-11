@@ -168,7 +168,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="w-[80%] justify-center bg-contain bg-center bg-no-repeat md:bg-apnaInsti-ss-bg">
+      <div className="w-[80%] mx-auto justify-center bg-contain bg-center bg-no-repeat md:bg-apnaInsti-ss-bg">
         <div className="mx-auto grid w-[80%] grid-cols-1 justify-center gap-x-4 sm:grid-cols-2 md:grid-cols-2">
           <Image
             className="mt-[50px] scale-[1.1] transform"

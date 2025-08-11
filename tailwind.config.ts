@@ -27,6 +27,19 @@ export default {
       screens: {
         hd: "1080px", // Custom screen for extra small devices
       },
+      keyframes: {
+        rotateRing: {
+          '0%': {
+            transform: 'rotateX(60deg) rotateY(-50deg) rotateZ(0deg)',
+          },
+          '100%': {
+            transform: 'rotateX(60deg) rotateY(-50deg) rotateZ(360deg)',
+          },
+        },
+      },
+      animation: {
+        rotateRing: 'rotateRing 3s linear infinite',
+      },
     },
   },
   plugins: [],

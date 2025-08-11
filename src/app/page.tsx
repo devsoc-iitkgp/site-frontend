@@ -1,9 +1,9 @@
-import About from "@/components/About";
+import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   return (
-    <div className="grid min-h-screen items-center justify-items-center font-[family-name:var(--font-geist-sans)]">
-      <About />
+    <div className="flex h-[800px] flex-col items-center justify-center">
+      <HeroSection />
     </div>
   );
 }
