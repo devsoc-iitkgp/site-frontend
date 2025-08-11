@@ -8,7 +8,7 @@ const HeroSection = () => {
       <img
         src="/globenew.png"
         alt=""
-        className="absolute bottom-0 left-1/2 h-[300px] min-h-[35vh] -translate-x-1/2 transform object-cover lg:h-[380px]"
+        className="absolute bottom-0 left-1/2 h-[500px] min-h-[50vh] -translate-x-1/2 transform object-cover lg:h-[600px]"
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent/30 to-transparent"></div>
 
@@ -58,7 +58,7 @@ const HeroSection = () => {
       </div>
 
       {/* text at center */}
-      <div className="absolute bottom-[6vh] left-1/2 w-[90vw] -translate-x-1/2 transform text-center text-transparent sm:bottom-[12vh]">
+      <div className="absolute bottom-[20vh] left-1/2 w-[90vw] -translate-x-1/2 transform text-center text-transparent sm:bottom-[25vh]">
         <div
           className="bg-clip-text text-[14vw] font-extrabold sm:text-[8vw]"
           style={{
