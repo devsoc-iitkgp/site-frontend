@@ -8,10 +8,6 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
-        poppins: ["Poppins", "sans-serif"],
-      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -20,7 +16,7 @@ export default {
         "glass-feature-card": "url('/Glass_feauture_card_bg.svg')",
         "number-bullet-bg": "url('/number_bullet-bg.svg')",
         "bullet-path": "url('/bullet-path.png')",
-        "apnaInsti-path-logo": "url('/apnaInsti-path-logo.svg')",
+        "apnaInsti-path-logo": "url('/apnaInsti_path-logo.svg')",
         "apnaInsti-ss-bg": "url('/apnaInsti_ss_bg.svg')",
         "phone-bg": "url('/phone_bg.svg')",
       },
@@ -36,9 +32,18 @@ export default {
             transform: 'rotateX(60deg) rotateY(-50deg) rotateZ(360deg)',
           },
         },
+        rotateRingDelayed: {
+          '0%': {
+            transform: 'rotateX(60deg) rotateY(-50deg) rotateZ(180deg)',
+          },
+          '100%': {
+            transform: 'rotateX(60deg) rotateY(-50deg) rotateZ(540deg)',
+          },
+        },
       },
       animation: {
         rotateRing: 'rotateRing 3s linear infinite',
+        rotateRingDelayed: 'rotateRingDelayed 3s linear infinite',
       },
     },
   },

@@ -1,13 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 const HeroSection = () => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
       <div className="absolute bottom-0 left-1/2 h-[28vw] w-[45vw] -translate-x-1/2 transform rounded-full bg-[#2a538e] blur-[100px]"></div>
@@ -55,44 +49,59 @@ const HeroSection = () => {
       </div>
       {/* logo at center */}
       <div className="relative w-full max-w-6xl mx-auto flex justify-center">
-        <div className="animate-rotateRing absolute top-[6rem] sm:top-[7rem] h-[8rem] w-[8rem] sm:h-[7rem] sm:w-[7rem] md:h-[8rem] md:w-[8rem] lg:h-[12rem] lg:w-[12rem] transform rounded-full border-[6px] border-solid border-violet-300 border-l-transparent border-r-transparent"></div>
+        {/* Ring that goes behind the logo */}
+        {/* <div className="animate-rotateRing absolute top-[6rem] sm:top-[7rem] h-[8rem] w-[8rem] sm:h-[7rem] sm:w-[7rem] md:h-[8rem] md:w-[8rem] lg:h-[12rem] lg:w-[12rem] transform rounded-full border-[6px] border-solid border-violet-300 border-l-transparent border-r-transparent" style={{ zIndex: 10 }}></div> */}
+        
+        {/* Ring that goes in front of the logo */}
+        {/* <div className="animate-rotateRingDelayed absolute top-[6rem] sm:top-[7rem] h-[8rem] w-[8rem] sm:h-[7rem] sm:w-[7rem] md:h-[8rem] md:w-[8rem] lg:h-[12rem] lg:w-[12rem] transform rounded-full border-[6px] border-solid border-violet-300 border-l-transparent border-r-transparent" style={{ zIndex: 100 }}></div> */}
 
         <div className="absolute top-[5rem] size-[40vw] min-h-[15vh] transform rounded-full bg-[#d739e5]/30 blur-[50px] sm:top-[2rem] sm:size-[28vw] sm:blur-[80px] md:blur-[110px] lg:blur-[160px]"></div>
         <img
           src="/logo-devsoc.png"
           alt="devsoc-logo"
-          className="absolute top-[7rem] z-50 h-[6rem] min-h-[4vh] transform sm:top-[5rem] sm:h-[5rem] md:h-[6rem] lg:top-[8rem] lg:h-[10rem]"
+          className="absolute top-[7rem] h-[6rem] min-h-[4vh] transform sm:top-[5rem] sm:h-[5rem] md:h-[6rem] lg:top-[8rem] lg:h-[10rem]"
+          style={{ zIndex: 50 }}
         />
         <div className="pointer-events-none absolute right-5 top-0 size-[28vw] rounded-full bg-[#3ddeed]/30 blur-[200px] md:blur-[130px] lg:blur-[160px] xl:blur-[200px]"></div>
       </div>
 
       {/* text at center */}
       <div className="absolute bottom-[20vh] left-1/2 w-[90vw] -translate-x-1/2 transform text-center text-transparent sm:bottom-[25vh]">
-        {/* Main text layer (full gradient fill) */}
+        {/* md and below: no gradient, just transparent fill + stroke + subtle shadow. lg and up: gradient */}
+        <div className="block lg:hidden">
+          <span
+            className="text-[14vw] sm:text-[8vw] font-extrabold text-transparent"
+            style={{
+              WebkitTextStroke: "0.5px white",
+              color: "rgba(0,0,0,0.5)",
+              opacity: 0.6,
+              filter: "saturate(90%)",
+              textShadow: "0 2px 8px rgba(255,255,255,0.08), 0 1px 2px rgba(0,0,0,0.15)"
+            }}
+          >
+            Developers&apos; Society
+          </span>
+        </div>
         <div
-          className="bg-clip-text text-[14vw] font-extrabold sm:text-[8vw]"
+          className="hidden lg:block bg-clip-text text-[14vw] sm:text-[8vw] font-extrabold text-transparent"
           style={{
-            backgroundImage: isClient
-              ? "linear-gradient(to right, #6A0DAD 0%, #CCCCCC 18%, rgba(255, 255, 255, 0) 22%, rgba(255, 255, 255, 0) 78%, #B3B3B3 82%, #6A0DAD 100%)"
-              : "linear-gradient(to right, #6A0DAD 0%, #CCCCCC 20%, #B3B3B3 40%, #6A0DAD 100%)",
-            WebkitMaskImage: "linear-gradient(to right, transparent, rgba(0,0,0,1) 8%, rgba(0,0,0,1) 92%, transparent)",
-            maskImage: "linear-gradient(to right, transparent, rgba(0,0,0,1) 8%, rgba(0,0,0,1) 92%, transparent)",
+            backgroundImage: "linear-gradient(to right, #6A0DAD 0%, #CCCCCC 18%, rgba(255, 255, 255, 0) 22%, rgba(255, 255, 255, 0) 78%, #B3B3B3 82%, #6A0DAD 100%)",
             opacity: 0.6,
-            filter: "saturate(90%)",
+            filter: "saturate(90%)"
           }}
         >
           Dev
           <span
             style={{
-              WebkitTextStroke: isClient ? "1px white" : "none",
-              color: isClient ? "transparent" : "inherit",
+              WebkitTextStroke: "0.5px white",
+              color: "rgba(0, 0, 0, 0.5)"
             }}
+            className="backdrop-blur-lg"
           >
             elopers&apos; Soc
           </span>
           iety
         </div>
-        
       </div>
     </div>
   );

@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
 
   //Removed the Map and separated the links to edit the individual logo sizes
   return (
-    <nav className="relative flex items-center justify-end space-x-8 font-montserrat text-[18px] lg:space-x-10 xl:space-x-16">
+    <nav className="relative flex items-center justify-end space-x-8 text-[18px] lg:space-x-10 xl:space-x-16">
       {/* Home Link */}
       <Link href="/" className="relative">
         <div className={getLinkClasses("/")}>
