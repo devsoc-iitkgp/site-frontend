@@ -1,10 +1,17 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Color, Scene, Fog, PerspectiveCamera, Vector3, Group } from "three";
+import {
+  Color,
+  Scene,
+  PerspectiveCamera,
+  Vector3,
+  Group,
+  Object3D,
+} from "three";
 import ThreeGlobe from "three-globe";
 import { useThree, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import * as THREE from "three";
+import type { FeatureCollection, Geometry } from "geojson";
 
 extend({ ThreeGlobe: ThreeGlobe });
 
@@ -39,44 +46,61 @@ export type GlobeConfig = {
 
 interface WorldProps {
   globeConfig: GlobeConfig;
-  data: unknown[];
+  data?: unknown[]; // optional; keep for API compatibility
 }
 
 export function Globe({ globeConfig }: WorldProps) {
   const globeRef = useRef<ThreeGlobe | null>(null);
-  const groupRef = useRef<Group>(new Group()); // Fix: initialize Group to avoid null errors
+  const groupRef = useRef<Group>(new Group());
   const [isInitialized, setIsInitialized] = useState(false);
-  const [countries, setCountries] = useState<{ features: object[] }>({
+  const [countries, setCountries] = useState<FeatureCollection<Geometry>>({
+    type: "FeatureCollection",
     features: [],
   });
 
+  // Load GeoJSON
   useEffect(() => {
     fetch("/globe.json")
       .then((res) => res.json())
-      .then((data) => setCountries(data));
+      .then((data: FeatureCollection<Geometry>) => setCountries(data))
+      .catch(() => {
+        // fail-safe: keep empty features on error
+        setCountries({ type: "FeatureCollection", features: [] });
+      });
   }, []);
 
+  // Create globe and add to group
   useEffect(() => {
     if (!globeRef.current && groupRef.current) {
       globeRef.current = new ThreeGlobe();
-      groupRef.current.add(globeRef.current as unknown as THREE.Object3D);
+      groupRef.current.add(globeRef.current as unknown as Object3D);
+      // push the whole globe down a bit inside its box
+      groupRef.current.position.y = -20;
       setIsInitialized(true);
     }
   }, []);
 
+  // Configure globe material
   useEffect(() => {
     if (!globeRef.current || !isInitialized) return;
-    groupRef.current.position.y = -25;
+
     const globeMaterial = globeRef.current.globeMaterial() as unknown as {
       color: Color;
       emissive: Color;
       emissiveIntensity: number;
       shininess: number;
+      transparent?: boolean;
+      opacity?: number;
     };
+
     globeMaterial.color = new Color(globeConfig.globeColor ?? "#1d072e");
     globeMaterial.emissive = new Color(globeConfig.emissive ?? "#000000");
     globeMaterial.emissiveIntensity = globeConfig.emissiveIntensity ?? 0.1;
     globeMaterial.shininess = globeConfig.shininess ?? 0.9;
+
+    // ensure the base sphere doesn't create a boxy backdrop
+    globeMaterial.transparent = true;
+    globeMaterial.opacity = 0;
   }, [
     isInitialized,
     globeConfig.globeColor,
@@ -85,29 +109,20 @@ export function Globe({ globeConfig }: WorldProps) {
     globeConfig.shininess,
   ]);
 
+  // Configure polygons / atmosphere
   useEffect(() => {
     if (!globeRef.current || !isInitialized) return;
-    const globeMaterial = globeRef.current.globeMaterial() as THREE.MeshPhongMaterial;
-
-    globeMaterial.color = new Color(globeConfig.globeColor ?? "#1d072e");
-    globeMaterial.emissive = new Color(globeConfig.emissive ?? "#000000");
-    globeMaterial.emissiveIntensity = globeConfig.emissiveIntensity ?? 0.1;
-    globeMaterial.shininess = globeConfig.shininess ?? 0.9;
 
     globeRef.current
-
-      .hexPolygonsData(countries.features)
+      .hexPolygonsData(countries.features as unknown as object[])
       .hexPolygonResolution(3)
       .hexPolygonMargin(0.7)
       .showAtmosphere(globeConfig.showAtmosphere ?? true)
       .atmosphereColor(globeConfig.atmosphereColor ?? "#ffffff")
       .atmosphereAltitude(globeConfig.atmosphereAltitude ?? 0.1)
       .hexPolygonColor(
-        () => globeConfig.polygonColor ?? "rgba(255,255,255, 0.7)"
+        () => globeConfig.polygonColor ?? "rgba(255,255,255,0.7)"
       );
-    // No arcs, points, or rings
-    globeMaterial.transparent = true;
-    globeMaterial.opacity = 0;
   }, [
     isInitialized,
     countries,
@@ -115,11 +130,6 @@ export function Globe({ globeConfig }: WorldProps) {
     globeConfig.atmosphereColor,
     globeConfig.atmosphereAltitude,
     globeConfig.polygonColor,
-    
-    globeConfig.globeColor,
-    globeConfig.emissive,
-    globeConfig.emissiveIntensity,
-    globeConfig.shininess,
   ]);
 
   return <primitive object={groupRef.current} />;
@@ -130,6 +140,7 @@ export function WebGLRendererConfig() {
   useEffect(() => {
     gl.setPixelRatio(window.devicePixelRatio);
     gl.setSize(size.width, size.height);
+    // fully transparent canvas background
     gl.setClearColor(0x000000, 0);
   }, [gl, size]);
   return null;
@@ -138,9 +149,14 @@ export function WebGLRendererConfig() {
 export function World(props: WorldProps) {
   const { globeConfig } = props;
   const scene = new Scene();
-//   scene.fog = new Fog(0xffffff, 400, 2000);
+
   return (
-    <Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 180, 1800)} gl={{ alpha: true }} style={{ background: "transparent" }}>
+    <Canvas
+      scene={scene}
+      camera={new PerspectiveCamera(48, aspect, 180, 1800)}
+      gl={{ alpha: true }}
+      style={{ background: "transparent" }}
+    >
       <WebGLRendererConfig />
       <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
       <directionalLight

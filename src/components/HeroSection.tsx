@@ -14,7 +14,10 @@ const HeroSection = () => {
         className="absolute bottom-0 left-1/2 h-[500px] min-h-[50vh] -translate-x-1/2 transform object-cover lg:h-[600px]"
       /> */}
       {/* Move the globe down and set z-index lower than text and logo */}
-      <div className="z-100 absolute left-1/2 flex w-full -translate-x-1/2 justify-center " style={{ background: "transparent", boxShadow: "none", border: "none" }}>
+      <div
+        className="z-100 absolute left-1/2 flex w-full -translate-x-1/2 justify-center"
+        style={{ background: "transparent", boxShadow: "none", border: "none" }}
+      >
         <div className="max-w-10xl w-full">
           <GlobeDemo />
         </div>
