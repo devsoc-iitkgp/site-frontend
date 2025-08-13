@@ -7,7 +7,7 @@ import Hamburger from "./Hamburger";
 
 function Header() {
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between p-4 text-white bg-transparent">
+    <header className="absolute left-0 right-0 top-0 z-50 flex items-center justify-between bg-transparent p-4 text-white">
       {/* Logo */}
       <div>
         <Image

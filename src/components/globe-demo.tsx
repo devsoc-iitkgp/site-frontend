@@ -1,11 +1,14 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 
-const World = dynamic(() => import("@/components/ui/globe").then((m) => m.World), {
-  ssr: false,
-});
+const World = dynamic(
+  () => import("@/components/ui/globe").then((m) => m.World),
+  {
+    ssr: false,
+  }
+);
 
 export default function GlobeDemo() {
   const globeConfig = {
@@ -31,8 +34,8 @@ export default function GlobeDemo() {
     autoRotateSpeed: 0.5,
   };
 
-  return(
-    <div className="flex items-center justify-center min-h-[800px] w-full bg-white dark:bg-black">
+  return (
+    <div className="flex min-h-[800px] w-full items-center justify-center bg-white dark:bg-black">
       <div className="globe-container">
         <World data={[]} globeConfig={globeConfig} />
       </div>

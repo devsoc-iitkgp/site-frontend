@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <div className="flex flex-col items-center font-poppins">
+    <div className="font-poppins flex flex-col items-center">
       <div className="my-8 flex items-center gap-3 sm:gap-6 md:my-12">
         <Image
           src="/logo-devsoc.png"
@@ -13,7 +13,7 @@ function Footer() {
           width={95}
           className="h-[56px] w-[50px] sm:h-[67px] sm:w-[60px] md:h-[77px] md:w-[70px] lg:h-[95px] lg:w-[90px]"
         />
-        <div className="flex flex-col font-montserrat text-[20px] font-bold sm:text-[22px] md:text-[28px] lg:text-[32px]">
+        <div className="font-montserrat flex flex-col text-[20px] font-bold sm:text-[22px] md:text-[28px] lg:text-[32px]">
           <h1>Developers’</h1>
           <h1>Society</h1>
         </div>

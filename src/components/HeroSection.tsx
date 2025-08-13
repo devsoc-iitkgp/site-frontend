@@ -14,14 +14,13 @@ const HeroSection = () => {
         className="absolute bottom-0 left-1/2 h-[500px] min-h-[50vh] -translate-x-1/2 transform object-cover lg:h-[600px]"
       /> */}
       {/* Move the globe down and set z-index lower than text and logo */}
-      <div className="absolute left-1/2 top-[15%] -translate-x-1/2 z-100 w-full flex justify-center"
-          style={{ background: "transparent" }}>
-        <div className="w-full max-w-10xl">
+      <div className="z-100 absolute left-1/2 flex w-full -translate-x-1/2 justify-center " style={{ background: "transparent", boxShadow: "none", border: "none" }}>
+        <div className="max-w-10xl w-full">
           <GlobeDemo />
         </div>
       </div>
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent/20 to-transparent"></div>
-      
+
       {/* Fade to black at bottom */}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-black via-black/90 to-transparent"></div>
 
@@ -34,7 +33,7 @@ const HeroSection = () => {
           >
             <div
               id="left"
-              className="left flex flex-row items-center gap-[2.5px] sm:gap-[5px]"
+              className="left pointer-events-none flex select-none flex-row items-center gap-[2.5px] sm:gap-[5px]"
             >
               <img
                 src="/logo1.png"
@@ -51,17 +50,17 @@ const HeroSection = () => {
           </div>
           <div
             id="text"
-            className="point-events-none select-none mt-[2px] pl-[2.5px] text-[10px] sm:mt-[12px] sm:pl-[5px] sm:text-[16px]"
+            className="point-events-none mt-[2px] select-none pl-[2.5px] text-[10px] sm:mt-[12px] sm:pl-[5px] sm:text-[16px]"
           >
             &quot;A New World For Developers&quot;
           </div>
         </div>
       </div>
       {/* logo at center */}
-      <div className="relative w-full max-w-6xl mx-auto flex justify-center z-30">
+      <div className="relative z-30 mx-auto flex w-full max-w-6xl justify-center">
         {/* Ring that goes behind the logo */}
         {/* <div className="animate-rotateRing absolute top-[6rem] sm:top-[7rem] h-[8rem] w-[8rem] sm:h-[7rem] sm:w-[7rem] md:h-[8rem] md:w-[8rem] lg:h-[12rem] lg:w-[12rem] transform rounded-full border-[6px] border-solid border-violet-300 border-l-transparent border-r-transparent" style={{ zIndex: 10 }}></div> */}
-        
+
         {/* Ring that goes in front of the logo */}
         {/* <div className="animate-rotateRingDelayed absolute top-[6rem] sm:top-[7rem] h-[8rem] w-[8rem] sm:h-[7rem] sm:w-[7rem] md:h-[8rem] md:w-[8rem] lg:h-[12rem] lg:w-[12rem] transform rounded-full border-[6px] border-solid border-violet-300 border-l-transparent border-r-transparent" style={{ zIndex: 100 }}></div> */}
 
@@ -76,35 +75,37 @@ const HeroSection = () => {
       </div>
 
       {/* text at center */}
-      <div className="pointer-events-none select-none absolute bottom-[20vh] left-1/2 w-[90vw] -translate-x-1/2 transform text-center text-transparent sm:bottom-[25vh] z-40">
+      <div className="pointer-events-none absolute bottom-[20vh] left-1/2 z-40 w-[90vw] -translate-x-1/2 transform select-none text-center text-transparent sm:bottom-[25vh]">
         {/* md and below: no gradient, just transparent fill + stroke + subtle shadow. lg and up: gradient */}
         <div className="block lg:hidden">
           <span
-            className="text-[14vw] sm:text-[8vw] font-extrabold text-transparent"
+            className="text-[14vw] font-extrabold text-transparent sm:text-[8vw]"
             style={{
               WebkitTextStroke: "0.5px white",
               color: "rgba(0,0,0,0.5)",
               opacity: 0.6,
               filter: "saturate(90%)",
-              textShadow: "0 2px 8px rgba(255,255,255,0.08), 0 1px 2px rgba(0,0,0,0.15)"
+              textShadow:
+                "0 2px 8px rgba(255,255,255,0.08), 0 1px 2px rgba(0,0,0,0.15)",
             }}
           >
             Developers&apos; Society
           </span>
         </div>
         <div
-          className="hidden lg:block bg-clip-text text-[14vw] sm:text-[8vw] font-extrabold text-transparent"
+          className="hidden bg-clip-text text-[14vw] font-extrabold text-transparent sm:text-[8vw] lg:block"
           style={{
-            backgroundImage: "linear-gradient(to right, #6A0DAD 0%, #CCCCCC 18%, rgba(255, 255, 255, 0) 22%, rgba(255, 255, 255, 0) 78%, #B3B3B3 82%, #6A0DAD 100%)",
+            backgroundImage:
+              "linear-gradient(to right, #6A0DAD 0%, #CCCCCC 18%, rgba(255, 255, 255, 0) 22%, rgba(255, 255, 255, 0) 78%, #B3B3B3 82%, #6A0DAD 100%)",
             opacity: 0.6,
-            filter: "saturate(90%)"
+            filter: "saturate(90%)",
           }}
         >
           Dev
           <span
             style={{
               WebkitTextStroke: "0.5px white",
-              color: "rgba(0, 0, 0, 0.5)"
+              color: "rgba(0, 0, 0, 0.5)",
             }}
             className="backdrop-blur-lg"
           >

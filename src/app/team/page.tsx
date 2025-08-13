@@ -18,87 +18,36 @@ const TeamsPage = () => {
       },
     },
     {
-      name: "John Doe",
+      name: "Daksh Yadav",
       role: "Executive Head",
-      imageUrl:
-        "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,  ",
+      imageUrl: "/Daksh_Yadav.jpg",
+      description: "Tech Coordi 1",
       links: {
-        linkedin: "https://www.linkedin.com/feed/",
-        github: "https://github.com/",
-        email: "https://mail.google.com/mail/u/0/#inbox",
+        linkedin: "https://www.linkedin.com/in/dakshyadavv/",
+        github: "https://github.com/dakshyadav1810",
+        email: "mailto:dakshyadav1810@gmail.com",
       },
     },
     {
-      name: "John Doe",
+      name: "Devansh Soni",
       role: "Executive Head",
-      imageUrl:
-        "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,  ",
+      imageUrl: "/Devansh_Soni.jpg",
+      description: "Tech Coordi 2",
       links: {
-        linkedin: "https://www.linkedin.com/feed/",
-        github: "https://github.com/",
-        email: "https://mail.google.com/mail/u/0/#inbox",
+        linkedin: "https://www.linkedin.com/in/devansh-sonii/",
+        github: "https://github.com/indenigrate",
+        email: "mailto:maachudaye@gmail.com",
       },
     },
     {
-      name: "John Doe",
+      name: "Saha",
       role: "Executive Head",
-      imageUrl:
-        "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,  ",
+      imageUrl: "/Saha.jpg",
+      description: "G.O.A.T.",
       links: {
-        linkedin: "https://www.linkedin.com/feed/",
-        github: "https://github.com/",
-        email: "https://mail.google.com/mail/u/0/#inbox",
-      },
-    },
-    {
-      name: "John Doe",
-      role: "Executive Head",
-      imageUrl:
-        "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,  ",
-      links: {
-        linkedin: "https://www.linkedin.com/feed/",
-        github: "https://github.com/",
-        email: "https://mail.google.com/mail/u/0/#inbox",
-      },
-    },
-    {
-      name: "John Doe",
-      role: "Executive Head",
-      imageUrl:
-        "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,  ",
-      links: {
-        linkedin: "https://www.linkedin.com/feed/",
-        github: "https://github.com/",
-        email: "https://mail.google.com/mail/u/0/#inbox",
-      },
-    },
-    {
-      name: "John Doe",
-      role: "Executive Head",
-      imageUrl:
-        "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,  ",
-      links: {
-        linkedin: "https://www.linkedin.com/feed/",
-        github: "https://github.com/",
-        email: "https://mail.google.com/mail/u/0/#inbox",
-      },
-    },
-    {
-      name: "John Doe",
-      role: "Executive Head",
-      imageUrl:
-        "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,  ",
-      links: {
-        linkedin: "https://www.linkedin.com/feed/",
-        github: "https://github.com/",
-        email: "https://mail.google.com/mail/u/0/#inbox",
+        linkedin: "https://www.linkedin.com/in/aditya-nigam-855445289/",
+        github: "https://github.com/hiexbris",
+        email: "mailto:hellojiaditya@gmail.com",
       },
     },
 
@@ -107,28 +56,32 @@ const TeamsPage = () => {
 
   return (
     <div className="bg-[url('/TeamsBg.png')] bg-cover bg-center">
-      <div className="justify-content-center flex min-h-screen flex-col items-center bg-transparent p-8 font-montserrat">
+      <div className="justify-content-center font-montserrat flex min-h-screen flex-col items-center bg-transparent p-8">
         <Heading name="Heads" />
         <div className="mt-4 grid w-[75%] grid-cols-1 justify-items-center gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {teamMembers.map((member, index) => (
-            <TeamCard
-              key={index}
-              name={member.name}
-              role={member.role}
-              imageUrl={member.imageUrl}
-              description={member.description}
-              links={member.links}
-            />
-          ))}
+          {teamMembers
+            .filter((member) => member.role === "Executive Head")
+            .map((member, index) => (
+              <TeamCard
+                key={`executive head-${index}`}
+                name={member.name}
+                role={member.role}
+                imageUrl={member.imageUrl}
+                description={member.description}
+                links={member.links}
+              />
+            ))}
         </div>
       </div>
-
-      <div className="justify-content-center flex min-h-screen flex-col items-center bg-transparent p-8 font-montserrat">
+      {/* Sub Heads */}
+      {/* <div className="justify-content-center flex min-h-screen flex-col items-center bg-transparent p-8 font-montserrat">
         <Heading name="SubHeads" />
         <div className="mt-4 grid w-[75%] grid-cols-1 justify-items-center gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {teamMembers.map((member, index) => (
+          {teamMembers
+          .filter((member) => member.role === "SubHeads")
+          .map((member, index) => (
             <TeamCard
-              key={index}
+              key={'subhead-${index}'}
               name={member.name}
               role={member.role}
               imageUrl={member.imageUrl}
@@ -137,7 +90,7 @@ const TeamsPage = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

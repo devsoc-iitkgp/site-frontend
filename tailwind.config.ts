@@ -25,25 +25,25 @@ export default {
       },
       keyframes: {
         rotateRing: {
-          '0%': {
-            transform: 'rotateX(60deg) rotateY(-50deg) rotateZ(0deg)',
+          "0%": {
+            transform: "rotateX(60deg) rotateY(-50deg) rotateZ(0deg)",
           },
-          '100%': {
-            transform: 'rotateX(60deg) rotateY(-50deg) rotateZ(360deg)',
+          "100%": {
+            transform: "rotateX(60deg) rotateY(-50deg) rotateZ(360deg)",
           },
         },
         rotateRingDelayed: {
-          '0%': {
-            transform: 'rotateX(60deg) rotateY(-50deg) rotateZ(180deg)',
+          "0%": {
+            transform: "rotateX(60deg) rotateY(-50deg) rotateZ(180deg)",
           },
-          '100%': {
-            transform: 'rotateX(60deg) rotateY(-50deg) rotateZ(540deg)',
+          "100%": {
+            transform: "rotateX(60deg) rotateY(-50deg) rotateZ(540deg)",
           },
         },
       },
       animation: {
-        rotateRing: 'rotateRing 3s linear infinite',
-        rotateRingDelayed: 'rotateRingDelayed 3s linear infinite',
+        rotateRing: "rotateRing 3s linear infinite",
+        rotateRingDelayed: "rotateRingDelayed 3s linear infinite",
       },
     },
   },
