@@ -19,3 +19,9 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+.globe-container {
+  width: 2000px;
+  height: 1500px;
+  margin: 0 auto;
+  position: relative;
+}

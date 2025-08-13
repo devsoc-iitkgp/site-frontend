@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^10.6.1",
+    "@react-three/fiber": "^9.3.0",
+    "framer-motion": "^12.23.12",
     "next": "15.1.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "three": "^0.179.1",
+    "three-globe": "^2.44.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

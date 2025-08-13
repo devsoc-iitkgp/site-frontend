@@ -1,19 +1,29 @@
 "use client";
 
 import React from "react";
+import GlobeDemo from "./globe-demo";
+
 const HeroSection = () => {
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
       <div className="absolute bottom-0 left-1/2 h-[28vw] w-[45vw] -translate-x-1/2 transform rounded-full bg-[#2a538e] blur-[100px]"></div>
-      <img
+      {/* Remove the old globe image */}
+      {/* <img
         src="/globenew.png"
         alt=""
         className="absolute bottom-0 left-1/2 h-[500px] min-h-[50vh] -translate-x-1/2 transform object-cover lg:h-[600px]"
-      />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent/30 to-transparent"></div>
+      /> */}
+      {/* Move the globe down and set z-index lower than text and logo */}
+      <div className="absolute left-1/2 top-[15%] -translate-x-1/2 z-100 w-full flex justify-center"
+          style={{ background: "transparent" }}>
+        <div className="w-full max-w-10xl">
+          <GlobeDemo />
+        </div>
+      </div>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent/20 to-transparent"></div>
       
       {/* Fade to black at bottom */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black via-black/90 to-transparent"></div>
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-black via-black/90 to-transparent"></div>
 
       {/* Notification popup */}
       <div className="absolute left-[2rem] top-[19rem] h-[3.9rem] w-[60vw] rounded-lg bg-gradient-to-r from-[#CEFCFF] via-white to-[#8726B7] p-[2px] sm:left-[2rem] sm:top-[17rem] sm:h-[91px] sm:w-[480px]">
@@ -31,24 +41,24 @@ const HeroSection = () => {
                 alt="logo"
                 className="h-[20px] w-[20px] pl-[4px] pt-[2px] sm:h-[40px] sm:w-[40px]"
               />
-              <p className="pl-[2px] text-[8px] font-bold sm:text-[16px]">
+              <p className="point-events-none select-none pl-[2px] text-[8px] font-bold sm:text-[16px]">
                 DEVELOPERS&apos; SOCIETY
               </p>
             </div>
-            <span className="p-[10px] text-[9px] text-white opacity-50 sm:text-[12px]">
+            <span className="point-events-none select-none p-[10px] text-[9px] text-white opacity-50 sm:text-[12px]">
               1h ago
             </span>
           </div>
           <div
             id="text"
-            className="mt-[2px] pl-[2.5px] text-[10px] sm:mt-[12px] sm:pl-[5px] sm:text-[16px]"
+            className="point-events-none select-none mt-[2px] pl-[2.5px] text-[10px] sm:mt-[12px] sm:pl-[5px] sm:text-[16px]"
           >
             &quot;A New World For Developers&quot;
           </div>
         </div>
       </div>
       {/* logo at center */}
-      <div className="relative w-full max-w-6xl mx-auto flex justify-center">
+      <div className="relative w-full max-w-6xl mx-auto flex justify-center z-30">
         {/* Ring that goes behind the logo */}
         {/* <div className="animate-rotateRing absolute top-[6rem] sm:top-[7rem] h-[8rem] w-[8rem] sm:h-[7rem] sm:w-[7rem] md:h-[8rem] md:w-[8rem] lg:h-[12rem] lg:w-[12rem] transform rounded-full border-[6px] border-solid border-violet-300 border-l-transparent border-r-transparent" style={{ zIndex: 10 }}></div> */}
         
@@ -66,7 +76,7 @@ const HeroSection = () => {
       </div>
 
       {/* text at center */}
-      <div className="absolute bottom-[20vh] left-1/2 w-[90vw] -translate-x-1/2 transform text-center text-transparent sm:bottom-[25vh]">
+      <div className="pointer-events-none select-none absolute bottom-[20vh] left-1/2 w-[90vw] -translate-x-1/2 transform text-center text-transparent sm:bottom-[25vh] z-40">
         {/* md and below: no gradient, just transparent fill + stroke + subtle shadow. lg and up: gradient */}
         <div className="block lg:hidden">
           <span

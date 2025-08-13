@@ -4,7 +4,10 @@ import React from "react";
 import Image from "next/image";
 const About = () => {
   return (
-    <>
+    <div
+      className="min-h-screen w-full bg-cover bg-center"
+      style={{ backgroundImage: "url('/AboutUs_bg.png')" }}
+    >
       <div className="relative left-[0] top-[1rem] flex h-[40rem] w-full items-center justify-center">
         <div className="relative box-border flex h-[33rem] w-[70.69rem] max-w-[90vw] items-center justify-center rounded-[3.6875rem] bg-[radial-gradient(circle_at_15.32%_21.04%,rgba(165,239,255,0.2)_0%,rgba(110,191,244,0.045)_77.08%,rgba(70,144,213,0)_100%)] p-4 text-white opacity-90 bg-blend-overlay shadow-[inset_3px_5px_2px_-3.75px_rgba(144,134,134,1),inset_0_-3px_10px_-2px_rgba(198,160,214,0.75)] backdrop-blur-[40px] md:h-[25rem]">
           <button className="absolute left-1/2 top-[3rem] flex h-[3.625rem] w-[11.625rem] -translate-x-1/2 items-center justify-center gap-2.5 rounded-[0.9375rem] bg-gradient-to-b from-[rgba(7,11,30,0.8)] to-[rgba(7,11,28,0.16)] px-2.5 text-2xl text-white shadow-[inset_3px_5px_2px_-3.75px_rgba(144,134,134,1),inset_0_-3px_10px_-2px_rgba(198,160,214,0.75)]">
@@ -186,7 +189,7 @@ const About = () => {
           ></Image>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
